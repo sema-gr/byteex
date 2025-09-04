@@ -1,0 +1,289 @@
+.loungewear-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+    background: linear-gradient(180deg, #F9F0E5 0%, #F9F0E52E 50%, #F9F0E500 100%);
+}
+
+.loungewear-company {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.loungewear-company-logos {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.loungewear-company-text {
+    margin-top: 70px;
+    font-size: 20px;
+    color: #868787;
+    font-family: "Sofia Pro", sans-serif;
+    font-weight: 400;
+}
+
+.loungewear-products {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 50px;
+}
+
+.loungewear-products-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+}
+
+.loungewear-products-title {
+    font-size: 32px;
+    color: #01005B;
+    font-family: "Sofia Pro", sans-serif;
+    font-weight: 400;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.loungewear-products-subtitle {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 30px;
+}
+
+.loungewear-products-subtitle-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 10px;
+}
+
+.loungewear-products-slider {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.main-slider {
+    display: flex;
+    justify-content: center;
+    width: 700px;
+    height: 600px;
+    overflow: hidden;
+}
+
+.main-slider-img {
+    width: 433px;
+    height: 648px;
+}
+
+.main-slider .swiper-slide {
+    flex-shrink: 0;
+    width: 100%;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-button-prev {
+    left: 60px;
+}
+
+.swiper-button-next {
+    right: 60px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: #676869;
+    width: 40px;
+    height: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.thumbs-slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    bottom: 60px;
+}
+
+.thumbs-slider .swiper-slide-thumb-active img {
+    border: 2px solid white;
+}
+
+.thumbs-slider img {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 1024px) {
+    .main-slider {
+        width: 90%;
+        height: auto;
+    }
+
+    .loungewear-products {
+        gap: 30px;
+    }
+
+    .loungewear-products-title {
+        font-size: 28px;
+        margin: 40px 0;
+        width: 330px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .loungewear-products {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .loungewear-products-subtitle {
+        gap: 15px;
+    }
+
+    .loungewear-products-slider {
+        margin: 0px;
+    }
+
+    .swiper {
+        padding-bottom: 30px;
+    }
+
+    .swiper-pagination {
+        bottom: 0px !important;
+        text-align: center;
+    }
+
+    .swiper-pagination-bullet {
+        width: 10px;
+        height: 10px;
+        background-color: #ccc;
+        opacity: 1;
+        margin: 0 4px;
+    }
+
+    .swiper-pagination-bullet-active {
+        background-color: #000;
+    }
+
+    .main-slider {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .main-slider-img {
+        width: 303px;
+        height: 453px;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        color: #000;
+        width: 30px;
+        height: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+    }
+
+    .swiper-button-prev {
+        left: 5px;
+    }
+
+    .swiper-button-next {
+        right: 5px;
+    }
+
+    .thumbs-slider {
+        bottom: 90px;
+    }
+
+    .thumbs-slider img {
+        width: 24px;
+        height: 24px;
+    }
+
+    .loungewear-company-text {
+        font-size: 16px;
+        margin-top: 40px;
+    }
+
+    .loungewear-products-title {
+        font-size: 26px;
+        margin: 30px 0;
+        width: 330px;
+    }
+}
+
+@media (max-width: 480px) {
+    .thumbs-slider img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .loungewear-products-title {
+        text-align: center;
+        font-size: 26px;
+        margin: 20px 0;
+        width: 330px;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        width: 25px;
+        height: 25px;
+        top: 38%;
+    }
+
+    .swiper-button-next {
+        right: 3px;
+    }
+
+    .swiper-button-prev {
+        left: 3px;
+    }
+
+    .loungewear-company-text {
+        font-size: 14px;
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+}

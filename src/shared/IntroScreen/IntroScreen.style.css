@@ -1,0 +1,148 @@
+/* Загальні стилі */
+* {
+    box-sizing: border-box;
+}
+
+.intro-screen {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: #FFFFFF;
+}
+
+.intro-screen-logo {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 20px 10%; /* адаптивний padding */
+}
+
+.intro-screen-header {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    height: 36px;
+    background-color: #F9F0E5;
+    color: #565656;
+    gap: 15px;
+}
+
+.intro-screen-title {
+    width: 100%;
+    max-width: 592px;
+    color: #01005B;
+    font-size: 38px;
+    font-family: "Sofia Pro", sans-serif;
+    font-weight: 400;
+}
+
+.intro-screen-title-block {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.intro-screen-subtitle {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.intro-screen-subtitle-item {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+}
+
+.intro-screen-subtitle-text {
+    width: 100%;
+    max-width: 425px;
+    font-size: 15px;
+    font-family: "Sofia Pro", sans-serif;
+    font-weight: 400;
+    color: #676869;
+}
+
+.intro-screen-button {
+    display: flex;
+    width: 100%;
+    max-width: 362px;
+    height: 56px;
+    background-color: #01005B;
+    color: #FFFFFF;
+    border-radius: 5px;
+    font-size: 18px;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.intro-screen-image {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.intro-screen-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .intro-screen-title-block {
+        align-items: center;
+        text-align: center;
+    }
+
+    .intro-screen-logo {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 10px;
+    }
+
+    .intro-screen-title {
+        width: 100%;
+        max-width: 351px;
+        height: auto;
+        font-size: 26px;
+        padding: 0 20px;
+    }
+
+    .intro-screen-subtitle {
+        padding-left: 25px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .intro-screen-subtitle-text {
+        text-align: left;
+        font-size: 13px;
+    }
+
+    .intro-screen-subtitle-item {
+        align-items: center;
+    }
+
+    .intro-screen-button {
+        font-size: 15px;
+        height: 48px;
+        max-width: 90%;
+    }
+
+    .intro-screen-button img {
+        width: 100%;
+        height: auto;
+    }
+}
