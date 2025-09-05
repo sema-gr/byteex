@@ -1,0 +1,139 @@
+.best-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 90px;
+    padding: 50px 5%;
+    background-color: #F0EEEF;
+}
+
+.best-picture-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.best-picture {
+    width: 523px;
+    height: 664px;
+}
+
+.best-info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+}
+
+.best-info-title {
+    font-size: 2rem;
+    color: #01005B;
+    font-family: "Sofia Pro", sans-serif;
+    font-weight: 400;
+}
+
+.best-info-text {
+    color: #6C6C6C;
+    font-size: 0.95rem;
+    font-weight: 400;
+    font-family: "Sofia Pro", sans-serif;
+    max-width: 100%;
+    line-height: 1.6;
+}
+
+.intro-screen-button {
+    padding: 12px 25px;
+    background-color: #01005B;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: "Sofia Pro", sans-serif;
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+.simple-text {
+    color: #6C6C6C;
+    font-size: 15px;
+    font-weight: 400;
+    max-width: 90%;
+}
+
+@media (max-width: 1080px) {
+    .best-container {
+        gap: 40px;
+        padding: 40px 4%;
+    }
+
+    .best-info-title {
+        font-size: 1.8rem;
+    }
+
+    .best-info-text {
+        font-size: 0.9rem;
+    }
+
+    .best-picture {
+        max-width: 450px;
+    }
+
+    .simple-text {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .best-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        padding: 30px 5%;
+    }
+
+    .best-info-title {
+        font-size: 1.6rem;
+        text-align: center;
+    }
+
+    .best-info-text {
+        font-size: 0.85rem;
+        text-align: center;
+    }
+
+    .best-picture {
+        max-width: 344px;
+        height: 362px;
+    }
+
+    .intro-screen-button {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .best-container {
+        padding: 20px 3%;
+        gap: 20px;
+    }
+
+    .best-info-title {
+        font-size: 1.4rem;
+    }
+
+    .best-info-text {
+        font-size: 0.8rem;
+    }
+
+    .best-picture {
+        max-width: 344px;
+    }
+
+    .best-info-container {
+        align-items: flex-start;
+        justify-content: center;
+    }
+}

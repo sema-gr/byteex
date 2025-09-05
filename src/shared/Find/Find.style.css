@@ -1,0 +1,130 @@
+.find-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+}
+
+.find-container-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+}
+
+.find-header {
+    font-size: 32px;
+    font-family: "Sofia Pro", sans-serif;
+    font-weight: 400;
+    color: #01005B;
+}
+
+.find-container-photo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.find-photo {
+    width: 815px;
+    height: 373px;
+}
+
+.find-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.find-footer-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.find-footer-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.find-footer-item-text {
+    text-align: center;
+    max-width: 170px;
+    font-size: 14px;
+    color: #676869;
+    font-family: "Sofia Pro", sans-serif;
+    font-weight: 400;
+}
+
+.find-vertical-hr {
+    width: 1px;
+    height: 50px;
+    border: none;
+    background-color: #ccc;
+    margin: 0 15px;
+    transform: rotate(180deg);
+    writing-mode: vertical-lr;
+}
+
+@media (max-width: 1024px) {
+    .find-header {
+        font-size: 26px;
+    }
+
+    .find-photo {
+        max-width: 600px;
+    }
+
+    .find-footer-info {
+        font-size: 11px;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .find-footer {
+        width: 100%;
+    }
+
+    .find-header {
+        font-size: 22px;
+    }
+
+    .find-photo {
+        max-width: 320px;
+        height: auto;
+    }
+
+    .find-footer-info {
+        width: 100%;
+        gap: 5px;
+        padding: 0px 15px;
+    }
+
+    .find-vertical-hr {
+        display: none;
+    }
+
+    .find-footer-item-text {
+        font-size: 10px;
+    }
+
+    .find-footer-item {
+        width: 100%;
+    }
+
+    .comfort-button-container img {
+        width: 100%;
+    }
+}

@@ -11,7 +11,7 @@ import "swiper/css/navigation";
 import "./Loungewear.style.css";
 
 export function Loungewear() {
-    const [isMobile, setIsMobile] = useState(window.innerWidth <= 1080);
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 1024);
     const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
 
     const images = [
@@ -23,7 +23,7 @@ export function Loungewear() {
     ];
 
     useEffect(() => {
-        const handleResize = () => setIsMobile(window.innerWidth <= 1080);
+        const handleResize = () => setIsMobile(window.innerWidth <= 1024);
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
     }, []);
@@ -84,24 +84,23 @@ export function Loungewear() {
                     <div className="loungewear-products-slider">
                         <Swiper
                             initialSlide={0}
-                            navigation={{
-                                nextEl: '.swiper-button-next',
-                                prevEl: '.swiper-button-prev',
-                            }}
+                            navigation={true}
                             thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}
                             modules={[Navigation, Thumbs]}
                             speed={500}
-                            onInit={(s: any) => s.slideTo(0, 0, false)}
+                            onInit={(s: SwiperType) => s.slideTo(0, 0, false)}
                             className="main-slider"
+                            style={{ width: "100%", maxWidth: "280px", position: "relative" }}
                         >
                             {images.map((src, i) => (
                                 <SwiperSlide key={i}>
-                                    <img src={src} alt={`Slide ${i}`} width={isMobile ? 303 : 433} height={isMobile ? 453 : 648} />
+                                    {isMobile ? (
+                                        <img src={src} alt={`Slide ${i}`} width={303} height={453} style={{ width: "100%", height: "auto" }} />
+                                    ) : (
+                                        <img src={src} alt={`Slide ${i}`} width={433} height={648} style={{ width: "100%", height: "auto" }} />
+                                    )}
                                 </SwiperSlide>
                             ))}
-
-                            <div className="swiper-button-prev"></div>
-                            <div className="swiper-button-next"></div>
                         </Swiper>
 
                         <Swiper
@@ -116,7 +115,7 @@ export function Loungewear() {
                             className="thumbs-slider"
                         >
                             {images.map((src, i) => (
-                                <SwiperSlide key={i} style={{ width: '31px' }}>
+                                <SwiperSlide key={i} style={{ width: "31px" }}>
                                     <img
                                         src={src}
                                         alt={`Thumbnail ${i}`}
@@ -124,7 +123,7 @@ export function Loungewear() {
                                     />
                                 </SwiperSlide>
                             ))}
-                            <p style={{ color: "#6C6C6C", fontSize: "13px", fontWeight: 400, fontFamily: "Sofia Pro, sans-serif", }}>White Robe</p>
+                            <p style={{ color: "#6C6C6C", fontSize: "13px", fontWeight: 400, fontFamily: "Sofia Pro, sans-serif" }}>White Robe</p>
                         </Swiper>
                     </div>
 
@@ -139,7 +138,7 @@ export function Loungewear() {
                             <p style={{ color: "#6C6C6C", fontSize: "15px", fontWeight: 400, fontFamily: "Sofia Pro, sans-serif", width: "497px" }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lobortis sapien facilisis tincidunt pellentesque. In eget ipsum et felis finibus consequat. </p>
                         </div>
                     </div>
-
+                    <hr style={{ width: "90%", color: "#C4C4C480" }} />
                     <div className="loungewear-products-subtitle">
                         <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="21" cy="21" r="21" fill="#F9F0E5" />
@@ -151,7 +150,7 @@ export function Loungewear() {
                             <p style={{ color: "#6C6C6C", fontSize: "15px", fontWeight: 400, fontFamily: "Sofia Pro, sans-serif", width: "497px" }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lobortis sapien facilisis tincidunt pellentesque. In eget ipsum et felis finibus consequat. </p>
                         </div>
                     </div>
-
+                    <hr style={{ width: "90%", color: "#C4C4C480" }} />
                     <div className="loungewear-products-subtitle">
                         <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="21" cy="21" r="21" fill="#F9F0E5" />
@@ -168,7 +167,7 @@ export function Loungewear() {
                             <p style={{ color: "#6C6C6C", fontSize: "15px", fontWeight: 400, fontFamily: "Sofia Pro, sans-serif", width: "497px" }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lobortis sapien facilisis tincidunt pellentesque. In eget ipsum et felis finibus consequat. </p>
                         </div>
                     </div>
-
+                    <hr style={{ width: "90%", color: "#C4C4C480" }} />
                     <div className="loungewear-products-subtitle">
                         <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="21" cy="21" r="21" fill="#F9F0E5" />
@@ -179,6 +178,34 @@ export function Loungewear() {
                             <p style={{ color: "#01005B", fontSize: "22px", fontWeight: 400, fontFamily: "Sofia Pro, sans-serif" }}>Unimaginably comfortable.</p>
                             <p style={{ color: "#6C6C6C", fontSize: "15px", fontWeight: 400, fontFamily: "Sofia Pro, sans-serif", width: "497px" }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lobortis sapien facilisis tincidunt pellentesque. In eget ipsum et felis finibus consequat. </p>
                         </div>
+                    </div>
+                </div>
+                <div className="comfort-button-container">
+                    <button className="comfort-button">Customize Your Outfit
+                        <svg width="23" height="10" viewBox="0 0 23 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18.1072 10L23 5.00003L18.1072 0L16.6372 1.5022L19.0205 3.93781L0 3.93781V6.06226L19.0205 6.06226L16.6372 8.4978L18.1072 10Z" fill="white" />
+                        </svg>
+                    </button>
+
+                    <div className="comment-review">
+                        <div>
+                            <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10.9857 3.6786C10.9686 3.62578 10.9371 3.57881 10.8946 3.54301C10.8522 3.50722 10.8006 3.48403 10.7456 3.47609L7.59968 3.01897L6.19242 0.165568C6.16782 0.115857 6.12981 0.0740131 6.08268 0.0447576C6.03556 0.0155021 5.9812 0 5.92574 0C5.87028 0 5.81592 0.0155021 5.76879 0.0447576C5.72167 0.0740131 5.68366 0.115857 5.65906 0.165568L4.2518 3.01682L1.10587 3.47394C1.05103 3.482 0.999527 3.50522 0.957172 3.54098C0.914818 3.57674 0.883293 3.62362 0.866151 3.67633C0.849008 3.72905 0.846929 3.7855 0.860149 3.83934C0.873368 3.89317 0.90136 3.94224 0.94097 3.98102L3.2173 6.20003L2.68017 9.33383C2.67118 9.38824 2.67748 9.44408 2.69838 9.49512C2.71927 9.54616 2.75394 9.59038 2.7985 9.62286C2.84307 9.65534 2.89579 9.6748 2.95077 9.67906C3.00575 9.68332 3.06083 9.67222 3.10987 9.64699L5.92601 8.16926L8.74 9.6486C8.78908 9.67388 8.84422 9.68499 8.89926 9.68072C8.9543 9.67644 9.00707 9.65694 9.05166 9.62438C9.09625 9.59183 9.1309 9.54751 9.15175 9.49639C9.17259 9.44527 9.17881 9.38935 9.16969 9.3349L8.63257 6.20111L10.9094 3.98209C10.9491 3.94362 10.9773 3.89482 10.9908 3.84121C11.0042 3.78759 11.0025 3.73127 10.9857 3.6786Z" fill="#FFB801" />
+                            </svg>
+                            <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10.9857 3.6786C10.9686 3.62578 10.9371 3.57881 10.8946 3.54301C10.8522 3.50722 10.8006 3.48403 10.7456 3.47609L7.59968 3.01897L6.19242 0.165568C6.16782 0.115857 6.12981 0.0740131 6.08268 0.0447576C6.03556 0.0155021 5.9812 0 5.92574 0C5.87028 0 5.81592 0.0155021 5.76879 0.0447576C5.72167 0.0740131 5.68366 0.115857 5.65906 0.165568L4.2518 3.01682L1.10587 3.47394C1.05103 3.482 0.999527 3.50522 0.957172 3.54098C0.914818 3.57674 0.883293 3.62362 0.866151 3.67633C0.849008 3.72905 0.846929 3.7855 0.860149 3.83934C0.873368 3.89317 0.90136 3.94224 0.94097 3.98102L3.2173 6.20003L2.68017 9.33383C2.67118 9.38824 2.67748 9.44408 2.69838 9.49512C2.71927 9.54616 2.75394 9.59038 2.7985 9.62286C2.84307 9.65534 2.89579 9.6748 2.95077 9.67906C3.00575 9.68332 3.06083 9.67222 3.10987 9.64699L5.92601 8.16926L8.74 9.6486C8.78908 9.67388 8.84422 9.68499 8.89926 9.68072C8.9543 9.67644 9.00707 9.65694 9.05166 9.62438C9.09625 9.59183 9.1309 9.54751 9.15175 9.49639C9.17259 9.44527 9.17881 9.38935 9.16969 9.3349L8.63257 6.20111L10.9094 3.98209C10.9491 3.94362 10.9773 3.89482 10.9908 3.84121C11.0042 3.78759 11.0025 3.73127 10.9857 3.6786Z" fill="#FFB801" />
+                            </svg>
+                            <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10.9857 3.6786C10.9686 3.62578 10.9371 3.57881 10.8946 3.54301C10.8522 3.50722 10.8006 3.48403 10.7456 3.47609L7.59968 3.01897L6.19242 0.165568C6.16782 0.115857 6.12981 0.0740131 6.08268 0.0447576C6.03556 0.0155021 5.9812 0 5.92574 0C5.87028 0 5.81592 0.0155021 5.76879 0.0447576C5.72167 0.0740131 5.68366 0.115857 5.65906 0.165568L4.2518 3.01682L1.10587 3.47394C1.05103 3.482 0.999527 3.50522 0.957172 3.54098C0.914818 3.57674 0.883293 3.62362 0.866151 3.67633C0.849008 3.72905 0.846929 3.7855 0.860149 3.83934C0.873368 3.89317 0.90136 3.94224 0.94097 3.98102L3.2173 6.20003L2.68017 9.33383C2.67118 9.38824 2.67748 9.44408 2.69838 9.49512C2.71927 9.54616 2.75394 9.59038 2.7985 9.62286C2.84307 9.65534 2.89579 9.6748 2.95077 9.67906C3.00575 9.68332 3.06083 9.67222 3.10987 9.64699L5.92601 8.16926L8.74 9.6486C8.78908 9.67388 8.84422 9.68499 8.89926 9.68072C8.9543 9.67644 9.00707 9.65694 9.05166 9.62438C9.09625 9.59183 9.1309 9.54751 9.15175 9.49639C9.17259 9.44527 9.17881 9.38935 9.16969 9.3349L8.63257 6.20111L10.9094 3.98209C10.9491 3.94362 10.9773 3.89482 10.9908 3.84121C11.0042 3.78759 11.0025 3.73127 10.9857 3.6786Z" fill="#FFB801" />
+                            </svg>
+                            <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10.9857 3.6786C10.9686 3.62578 10.9371 3.57881 10.8946 3.54301C10.8522 3.50722 10.8006 3.48403 10.7456 3.47609L7.59968 3.01897L6.19242 0.165568C6.16782 0.115857 6.12981 0.0740131 6.08268 0.0447576C6.03556 0.0155021 5.9812 0 5.92574 0C5.87028 0 5.81592 0.0155021 5.76879 0.0447576C5.72167 0.0740131 5.68366 0.115857 5.65906 0.165568L4.2518 3.01682L1.10587 3.47394C1.05103 3.482 0.999527 3.50522 0.957172 3.54098C0.914818 3.57674 0.883293 3.62362 0.866151 3.67633C0.849008 3.72905 0.846929 3.7855 0.860149 3.83934C0.873368 3.89317 0.90136 3.94224 0.94097 3.98102L3.2173 6.20003L2.68017 9.33383C2.67118 9.38824 2.67748 9.44408 2.69838 9.49512C2.71927 9.54616 2.75394 9.59038 2.7985 9.62286C2.84307 9.65534 2.89579 9.6748 2.95077 9.67906C3.00575 9.68332 3.06083 9.67222 3.10987 9.64699L5.92601 8.16926L8.74 9.6486C8.78908 9.67388 8.84422 9.68499 8.89926 9.68072C8.9543 9.67644 9.00707 9.65694 9.05166 9.62438C9.09625 9.59183 9.1309 9.54751 9.15175 9.49639C9.17259 9.44527 9.17881 9.38935 9.16969 9.3349L8.63257 6.20111L10.9094 3.98209C10.9491 3.94362 10.9773 3.89482 10.9908 3.84121C11.0042 3.78759 11.0025 3.73127 10.9857 3.6786Z" fill="#FFB801" />
+                            </svg>
+                            <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10.9857 3.6786C10.9686 3.62578 10.9371 3.57881 10.8946 3.54301C10.8522 3.50722 10.8006 3.48403 10.7456 3.47609L7.59968 3.01897L6.19242 0.165568C6.16782 0.115857 6.12981 0.0740131 6.08268 0.0447576C6.03556 0.0155021 5.9812 0 5.92574 0C5.87028 0 5.81592 0.0155021 5.76879 0.0447576C5.72167 0.0740131 5.68366 0.115857 5.65906 0.165568L4.2518 3.01682L1.10587 3.47394C1.05103 3.482 0.999527 3.50522 0.957172 3.54098C0.914818 3.57674 0.883293 3.62362 0.866151 3.67633C0.849008 3.72905 0.846929 3.7855 0.860149 3.83934C0.873368 3.89317 0.90136 3.94224 0.94097 3.98102L3.2173 6.20003L2.68017 9.33383C2.67118 9.38824 2.67748 9.44408 2.69838 9.49512C2.71927 9.54616 2.75394 9.59038 2.7985 9.62286C2.84307 9.65534 2.89579 9.6748 2.95077 9.67906C3.00575 9.68332 3.06083 9.67222 3.10987 9.64699L5.92601 8.16926L8.74 9.6486C8.78908 9.67388 8.84422 9.68499 8.89926 9.68072C8.9543 9.67644 9.00707 9.65694 9.05166 9.62438C9.09625 9.59183 9.1309 9.54751 9.15175 9.49639C9.17259 9.44527 9.17881 9.38935 9.16969 9.3349L8.63257 6.20111L10.9094 3.98209C10.9491 3.94362 10.9773 3.89482 10.9908 3.84121C11.0042 3.78759 11.0025 3.73127 10.9857 3.6786Z" fill="#FFB801" />
+                            </svg>
+                        </div>
+                        <p className="comment-review-count">One of 500+ 5 Star Reviews Online</p>
                     </div>
                 </div>
             </> :

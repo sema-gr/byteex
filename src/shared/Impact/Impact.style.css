@@ -1,0 +1,98 @@
+.impact-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    background-color: #F0EEEF;
+    padding: 30px;
+}
+
+.impact-title {
+    font-size: 25px;
+    color: #15005B;
+    font-family: "Sofia Pro", sans-serif;
+}
+
+.impact-container-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.impact-info-item {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.impact-info-title {
+    font-size: 22px;
+    color: #15005B;
+    font-family: "Sofia Pro", sans-serif;
+    font-weight: 600;
+}
+
+.impact-info-text {
+    font-size: 14px;
+    color: #15005B;
+    font-family: "Sofia Pro", sans-serif;
+    font-weight: 400;
+}
+
+.vertical-hr {
+    width: 1px;
+    height: 100px;
+    border: none;
+    background-color: #ccc;
+    margin: 0 15px;
+    transform: rotate(180deg);
+    writing-mode: vertical-lr;
+}
+
+@media (max-width: 1024px) {
+    .impact-container-info {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .vertical-hr {
+        width: 100px;
+        height: 1px;
+        margin: 15px 0;
+    }
+
+    .vertical-hr {
+        width: 100%
+    }
+
+    .impact-container-info {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .impact-title {
+        font-size: 20px;
+    }
+
+    .impact-info-title {
+        font-size: 18px;
+    }
+
+    .impact-info-text {
+        font-size: 13px;
+    }
+
+    .vertical-hr {
+        width: 100%
+    }
+
+    .impact-container-info {
+        width: 100%;
+    }
+}

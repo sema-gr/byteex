@@ -36,8 +36,8 @@ export function Comment() {
                                 </svg>
                             </div>
                             <p className="comment-review-count">One of 500+ 5 Star Reviews Online</p>
+                            <p className="comment-user-name">Amy P.</p>
                         </div>
-                        <p className="comment-user-name">Amy P.</p>
                     </> : <>
                         <p className="comment-user-name">Amy P.</p>
                         <div className="comment-review">
@@ -63,7 +63,7 @@ export function Comment() {
                 </div>
             </div>
             <div className="comment-body">
-                <p style={{ fontSize: "12px", color: "#676869", width: "350px", wordSpacing: "7px" }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed sollicitudin dolor, non sodales justo.</p>
+                <p style={{ fontSize: "12px", color: "#676869", wordSpacing: "7px" }}>Overjoyed with my Loungewear set. I have the jogger and the sweatshirt. Quality product on every level. From the compostable packaging, to the supplied washing bag, even the garments smells like fresh herbs when I first held them. </p>
             </div>
         </div>
     )

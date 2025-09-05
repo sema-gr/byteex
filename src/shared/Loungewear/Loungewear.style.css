@@ -5,6 +5,7 @@
     justify-content: center;
     gap: 30px;
     padding: 20px;
+    margin-top: 70px;
     background: linear-gradient(180deg, #F9F0E5 0%, #F9F0E52E 50%, #F9F0E500 100%);
 }
 
@@ -149,24 +150,13 @@
     transition: all 0.3s ease;
 }
 
-@media (max-width: 1024px) {
-    .main-slider {
-        width: 90%;
-        height: auto;
-    }
 
-    .loungewear-products {
-        gap: 30px;
-    }
+@media (max-width: 1080px) {
 
-    .loungewear-products-title {
-        font-size: 28px;
-        margin: 40px 0;
-        width: 330px;
+    .loungewear-products-info{
+        align-items: center;
+        text-align: center;
     }
-}
-
-@media (max-width: 768px) {
 
     .loungewear-products {
         flex-direction: column;
@@ -178,12 +168,52 @@
         gap: 15px;
     }
 
-    .loungewear-products-slider {
-        margin: 0px;
-    }
-
     .swiper {
         padding-bottom: 30px;
+    }
+
+    .main-slider {
+        width: 100%;
+        max-width: 303px;
+        position: relative;
+        margin: 0 auto;
+    }
+
+    .main-slider-img {
+        width: 303px;
+        height: 453px;
+    }
+
+    .loungewear-products-slider {
+        position: relative;
+        margin: 0px;
+        padding: 0px;
+        max-height: 700px;
+    }
+
+    .loungewear-products-slider .swiper-button-prev,
+    .loungewear-products-slider .swiper-button-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 20;
+        width: 40px;
+        height: 40px;
+        color: #ffffff;
+    }
+
+    .loungewear-products-slider .swiper-button-prev {
+        left: 0px;
+    }
+
+    .loungewear-products-slider .swiper-button-next {
+        right: 0px;
+    }
+
+    .loungewear-products-slider .swiper-button-prev:after,
+    .loungewear-products-slider .swiper-button-next:after {
+        font-size: 22px;
+        color: #ffffff;
     }
 
     .swiper-pagination {
@@ -203,42 +233,11 @@
         background-color: #000;
     }
 
-    .main-slider {
-        width: 100%;
-        height: auto;
-        position: relative;
-    }
-
-    .main-slider-img {
-        width: 303px;
-        height: 453px;
-    }
-
-    .swiper-button-prev,
-    .swiper-button-next {
-        color: #000;
-        width: 30px;
-        height: 30px;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 10;
-    }
-
-    .swiper-button-prev {
-        left: 5px;
-    }
-
-    .swiper-button-next {
-        right: 5px;
-    }
-
-    .thumbs-slider {
-        bottom: 90px;
-    }
-
-    .thumbs-slider img {
-        width: 24px;
-        height: 24px;
+    .loungewear-products-title {
+        text-align: center;
+        font-size: 26px;
+        margin: 30px 0;
+        width: 330px;
     }
 
     .loungewear-company-text {
@@ -246,14 +245,187 @@
         margin-top: 40px;
     }
 
+    .thumbs-slider {
+        bottom: 160px;
+    }
+
+    .thumbs-slider img {
+        width: 24px;
+        height: 24px;
+    }
+
+    .loungewear-products-subtitle {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 12px;
+        margin-bottom: 30px;
+        margin-top: 0px;
+    }
+
+    .loungewear-products-subtitle svg {
+        width: 48px;
+        height: 48px;
+        flex-shrink: 0;
+    }
+
+    .loungewear-products-subtitle-item p:first-child {
+        font-size: 20px;
+        margin-bottom: 8px;
+    }
+
+    .loungewear-products-subtitle-item p:last-child {
+        font-size: 14px;
+        line-height: 1.5;
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+
+    .loungewear-products-subtitle-item {
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .loungewear-products {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .loungewear-products-subtitle {
+        gap: 15px;
+    }
+
+    .swiper {
+        padding-bottom: 30px;
+    }
+
+    .main-slider {
+        width: 100%;
+        max-width: 303px;
+        position: relative;
+        margin: 0 auto;
+    }
+
+    .main-slider-img {
+        width: 303px;
+        height: 453px;
+    }
+
+    .loungewear-products-slider {
+        position: relative;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .loungewear-products-slider .swiper-button-prev,
+    .loungewear-products-slider .swiper-button-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 20;
+        width: 40px;
+        height: 40px;
+        color: #ffffff;
+    }
+
+    .loungewear-products-slider .swiper-button-prev {
+        left: 0px;
+    }
+
+    .loungewear-products-slider .swiper-button-next {
+        right: 0px;
+    }
+
+    .loungewear-products-slider .swiper-button-prev:after,
+    .loungewear-products-slider .swiper-button-next:after {
+        font-size: 22px;
+        color: #ffffff;
+    }
+
+    .swiper-pagination {
+        bottom: 0px !important;
+        text-align: center;
+    }
+
+    .swiper-pagination-bullet {
+        width: 10px;
+        height: 10px;
+        background-color: #ccc;
+        opacity: 1;
+        margin: 0 4px;
+    }
+
+    .swiper-pagination-bullet-active {
+        background-color: #000;
+    }
+
     .loungewear-products-title {
         font-size: 26px;
         margin: 30px 0;
         width: 330px;
     }
+
+    .loungewear-company-text {
+        font-size: 16px;
+        margin-top: 40px;
+    }
+
+    .thumbs-slider img {
+        width: 24px;
+        height: 24px;
+    }
+
+    .loungewear-products-subtitle {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 12px;
+        margin-bottom: 30px;
+        margin-top: 0px;
+    }
+
+    .loungewear-products-subtitle svg {
+        width: 48px;
+        height: 48px;
+        flex-shrink: 0;
+    }
+
+    .loungewear-products-subtitle-item p:first-child {
+        font-size: 20px;
+        margin-bottom: 8px;
+    }
+
+    .loungewear-products-subtitle-item p:last-child {
+        font-size: 14px;
+        line-height: 1.5;
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+
+    .loungewear-products-subtitle-item {
+        align-items: center;
+    }
 }
 
+
 @media (max-width: 480px) {
+
+    .loungewear-products-slider {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .thumbs-slider {
+        bottom: 160px;
+    }
+
     .thumbs-slider img {
         width: 20px;
         height: 20px;
